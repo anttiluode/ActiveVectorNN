@@ -22,3 +22,5 @@ jobs:
         run: python -m pytest -q
       - name: Frozen v0 receipt
         run: python -m experiments.run_v0 > /tmp/active-vector-v0.json
+      - name: Frozen v1 receipt
+        run: python -m experiments.run_v1 > /tmp/active-vector-v1.json
