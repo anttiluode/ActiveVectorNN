@@ -44,6 +44,10 @@ class ActiveVectorCell:
             raise ValueError("alpha values must be finite and strictly between 0 and 1")
         return values
 
+    def set_alpha(self, alpha: float | np.ndarray) -> None:
+        """Replace persistence without changing sender or receiver state."""
+        self.alpha = self._coerce_alpha(alpha)
+
     def reset(self) -> None:
         self.state.fill(0.0)
         self.receiver_state.fill(0.0)
